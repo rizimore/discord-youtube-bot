@@ -23,10 +23,10 @@ client.on('message', message => {
         const COMMAND_CONTENT = args.join(' ');
 
         if (COMMAND_NAME === 'yt') {
-            youtube.search(COMMAND_CONTENT, 20, function(error, result) {
+            youtube.search(COMMAND_CONTENT, 1, function(error, result) {
                 YOUTUBE_DATA = result;
                 if (!error) {
-                    message.channel.send('--7up https://www.youtube.com/watch?v=' + YOUTUBE_DATA.items[COUNT].id.videoId);
+                    message.channel.send('https://www.youtube.com/watch?v=' + YOUTUBE_DATA.items[COUNT].id.videoId);
 					console.log(COMMAND_CONTENT);
                 } else {
                     message.reply('Something is not working fine, contact developer please!');
